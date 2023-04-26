@@ -15,11 +15,11 @@ import java.util.List;
 public class EmployeeDAOimpl implements EmployeeDAO{
     private JdbcTemplate jdbcTemplate;
 
-    @Value("#{jdbc['insertSQL']}") private String insertSQL;
+    // @Value("#{jdbc['insertSQL']}") private String insertSQL;
     @Value("#{jdbc['selectSQL']}") private String selectSQL;
-    @Value("#{jdbc['selectOneSQL']}") private String selectOneSQL;
-    @Value("#{jdbc['updateSQL']}") private String updateSQL;
-    @Value("#{jdbc['deleteSQL']}") private String deleteSQL;
+    // @Value("#{jdbc['selectOneSQL']}") private String selectOneSQL;
+    // @Value("#{jdbc['updateSQL']}") private String updateSQL;
+    // @Value("#{jdbc['deleteSQL']}") private String deleteSQL;
 
     @Autowired
     public EmployeeDAOimpl(JdbcTemplate jdbcTemplate) {
