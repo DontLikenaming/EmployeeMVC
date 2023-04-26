@@ -46,6 +46,94 @@ public class Employee {
         this.deptid = deptid;
     }
 
+    public int getEmpid() {
+        return empid;
+    }
+
+    public void setEmpid(int empid) {
+        this.empid = empid;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getHdate() {
+        return hdate;
+    }
+
+    public void setHdate(String hdate) {
+        this.hdate = hdate;
+    }
+
+    public String getJobid() {
+        return jobid;
+    }
+
+    public void setJobid(String jobid) {
+        this.jobid = jobid;
+    }
+
+    public int getSal() {
+        return sal;
+    }
+
+    public void setSal(int sal) {
+        this.sal = sal;
+    }
+
+    public double getComm() {
+        return comm;
+    }
+
+    public void setComm(double comm) {
+        this.comm = comm;
+    }
+
+    public int getMgrid() {
+        return mgrid;
+    }
+
+    public void setMgrid(int mgrid) {
+        this.mgrid = mgrid;
+    }
+
+    public int getDeptid() {
+        return deptid;
+    }
+
+    public void setDeptid(int deptid) {
+        this.deptid = deptid;
+    }
+
     @Override
     public String toString() {
         String fmt = "%d %s %s %s %s %s %s %d %.2f %d %d";
