@@ -51,6 +51,13 @@ public class Employee {
         this.mgrid = mgrid;
     }
 
+    public Employee(int empid, String jobid, int mgrid, int deptid) {
+        this.empid = empid;
+        this.jobid = jobid;
+        this.mgrid = mgrid;
+        this.deptid = deptid;
+    }
+
     public int getEmpid() {
         return empid;
     }

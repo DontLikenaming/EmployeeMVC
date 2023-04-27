@@ -36,7 +36,11 @@ public class EmployeeServiceimpl implements EmployeeSerivce{
 
         @Override
         public boolean modifyEmployee(Employee emp) {
-            return false;
+            boolean result = false;
+
+            if (empdao.updateEmployee(emp) > 0) result = true;
+
+            return result;
         }
 
         @Override

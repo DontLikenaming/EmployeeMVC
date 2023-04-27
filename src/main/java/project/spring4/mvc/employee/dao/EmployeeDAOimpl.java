@@ -22,7 +22,7 @@ public class EmployeeDAOimpl implements EmployeeDAO{
     @Value("#{jdbc['insertSQL']}") private String insertSQL;
     @Value("#{jdbc['selectSQL']}") private String selectSQL;
     @Value("#{jdbc['selectOneSQL']}") private String selectOneSQL;
-    // @Value("#{jdbc['updateSQL']}") private String updateSQL;
+    @Value("#{jdbc['updateSQL']}") private String updateSQL;
     @Value("#{jdbc['deleteSQL']}") private String deleteSQL;
 
     @Autowired
@@ -33,9 +33,6 @@ public class EmployeeDAOimpl implements EmployeeDAO{
 
     @Override
     public int insertEmployee(Employee emp) {
-        int cnt = -1;
-
-        try {
             Object[] params = new Object[]{
                     emp.getEmpid(), emp.getFname(),
                     emp.getLname(), emp.getEmail(),
@@ -45,12 +42,8 @@ public class EmployeeDAOimpl implements EmployeeDAO{
                     emp.getDeptid()
             };
 
-            cnt = jdbcTemplate.update(insertSQL, params);
-        } catch (Exception ex){
-            logger.error("insertSungJuk 오류!");
-            logger.info(ex.getMessage());
-        }
-        return cnt;
+        return jdbcTemplate.update(insertSQL, params);
+
     }
 
     @Override
@@ -106,8 +99,12 @@ public class EmployeeDAOimpl implements EmployeeDAO{
 
     @Override
     public int updateEmployee(Employee emp) {
-        int cnt = -1;
-        return cnt;
+        Object[] params = new Object[]{
+                emp.getJobid(),  emp.getMgrid(),
+                emp.getDeptid(), emp.getEmpid()
+        };
+
+        return jdbcTemplate.update(updateSQL, params);
     }
 
     @Override

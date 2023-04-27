@@ -73,6 +73,35 @@ public class EmployeeController {
         return "redirect:/list";
     }
 
+    @GetMapping(value = "/modify")
+    public ModelAndView update(@RequestParam int empid){
+        ModelAndView mav = new ModelAndView();
+        String view = "empfail";
+        Employee emp = empsrv.readOneEmployee(empid);
+
+        if(emp!=null) {
+            view = "empmodify";
+            mav.addObject("emp", emp);
+        }
+
+        mav.setViewName(view);
+
+        return mav;
+    }
+
+    @PostMapping(value = "/modify")
+    public ModelAndView updateok(Employee emp){
+        ModelAndView mv = new ModelAndView();
+        String view = "empfail";
+        if(empsrv.modifyEmployee(emp)) {
+            view = "redirect:/view?empid="+emp.getEmpid();
+            mv.addObject("emp", emp);
+        }
+
+        mv.setViewName(view);
+
+        return mv;
+    }
 
     @ExceptionHandler(BindException.class)
     public String typeMismatchParam(BindException ex){
