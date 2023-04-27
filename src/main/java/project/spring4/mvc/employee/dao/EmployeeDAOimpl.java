@@ -73,11 +73,11 @@ public class EmployeeDAOimpl implements EmployeeDAO{
 
     @Override
     public Employee selectOneEmployee(int empid) {
-        Object[] params = new Object[]{ empid };
+        Object[] param = new Object[]{ empid };
         RowMapper<Employee> mapper = new EmployeeOneMapper();
 
         Employee emp = jdbcTemplate.queryForObject(
-                selectOneSQL, mapper, params
+                selectOneSQL, mapper, param
         );
 
         return emp;

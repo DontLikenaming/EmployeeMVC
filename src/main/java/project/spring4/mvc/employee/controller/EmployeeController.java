@@ -1,6 +1,10 @@
 package project.spring4.mvc.employee.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Controller
 public class EmployeeController {
     private EmployeeSerivce empsrv;
+    private static final Logger logger = LogManager.getLogger(EmployeeController.class);
 
     @Autowired
     public EmployeeController(EmployeeSerivce empsrv) { this.empsrv = empsrv; }
@@ -66,5 +71,13 @@ public class EmployeeController {
         empsrv.removeEmployee(empid);
 
         return "redirect:/list";
+    }
+
+
+    @ExceptionHandler(BindException.class)
+    public String typeMismatchParam(BindException ex){
+        logger.info("매개변수 관련 오류!");
+        logger.info(ex.getMessage());
+        return "empfail";
     }
 }

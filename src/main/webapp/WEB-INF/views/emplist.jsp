@@ -4,20 +4,18 @@
 <head>
     <title>사원 정보 조회</title>
 </head>
-<style>
-    table { border: black solid 1px; width: 750px;
-        border-spacing: 0; }
-    th, td { border: black solid 1px;
-        padding: 10px; border-spacing: 0; }
-</style>
+<link rel="stylesheet" href="css/empcss.css">
 <body>
-<h1>사원 정보 조회</h1>
+<div>
+    <p class="listMainlink"><a href="/">메인으로</a></p>
+    <h1>사원 정보 조회</h1>
+</div>
 <table id="listTable">
     <tr><th>사원번호</th><th>이름</th><th>이메일</th><th>직책</th><th>부서번호</th></tr>
     <c:forEach items="${emp}" var="emp">
         <tr>
             <td>${emp.empid}</td>
-            <td>${emp.fname}</td>
+            <td><a href="/view?empid=${emp.empid}">${emp.fname}</a></td>
             <td>${emp.email}</td>
             <td>${emp.jobid}</td>
             <td>${emp.deptid}</td>
@@ -25,5 +23,7 @@
     </c:forEach>
 
 </table>
+
+<p class="listMainlink"><a href="/">메인으로</a></p>
 </body>
 </html>

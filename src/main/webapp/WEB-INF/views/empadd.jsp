@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <title>사원 정보 처리 프로그램</title>
 </head>
-<style>
-    form {width: 260px; text-align: right;}
-    form div {margin-bottom: 3px; margin-right: 3px;}
-    form button {margin-top: 10px; margin-right: 3px;}
-</style>
+<link rel="stylesheet" href="css/empcss.css">
 <body>
 <h1>사원 등록</h1>
 
-<form name="emp" method="post">
+<form name="emp" id="empfrm" method="post">
     <div>사원번호 : <input type = "text" name = "empid"></div>
     <div>이름 : <input type = "text" name = "fname"></div>
     <div>성 : <input type = "text" name = "lname"></div>
@@ -27,5 +23,6 @@
     <div><button type="submit">입력완료</button></div>
 </form>
 
+<p><a href="/">메인으로</a></p>
 </body>
 </html>

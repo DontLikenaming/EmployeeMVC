@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.listMainlink { float: right; }
+
+#listTable { border: black solid 1px; width: 750px;
+    border-spacing: 0; }
+
+#listTable th, td { border: black solid 1px;
+    padding: 10px; border-spacing: 0; }
+
+
+#empfrm {width: 260px; text-align: right;}
+
+#empfrm div {margin-bottom: 3px; margin-right: 3px;}
+
+#empfrm button {margin-top: 10px; margin-right: 3px;}
+
+
+#viewtable { border: black solid 1px; width: 750px;
+    border-spacing: 0; }
+
+#viewtable th, td {border: black solid 1px;
+    padding: 10px; border-spacing: 0;}
+
+#viewtable td {text-align: center;}
