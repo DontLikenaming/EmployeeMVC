@@ -32,6 +32,21 @@ public class Employee {
         this.deptid = deptid;
     }
 
+    public Employee(String fname, String lname, String email,
+                    String phone, String hdate, String jobid,
+                    int sal, double comm, int mgrid, int deptid) {
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+        this.phone = phone;
+        this.hdate = hdate;
+        this.jobid = jobid;
+        this.sal = sal;
+        this.comm = comm;
+        this.mgrid = mgrid;
+        this.deptid = deptid;
+    }
+
     public Employee(int empid, String fname, String email, String jobid, int deptid) {
         this.empid = empid;
         this.fname = fname;
@@ -87,12 +102,10 @@ public class Employee {
     }
 
     public String getHdate() {
-        return hdate;
+        return hdate.substring(0,10);
     }
 
-    public void setHdate(String hdate) {
-        this.hdate = hdate;
-    }
+    public void setHdate(String hdate) { this.hdate = hdate; }
 
     public String getJobid() {
         return jobid;
